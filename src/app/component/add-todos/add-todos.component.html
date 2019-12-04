@@ -1,0 +1,23 @@
+<div class="row" style="margin-top: 25px;">
+    <form class="col s12" (ngSubmit) = 'onSubmit(f)' #f = 'ngForm'>
+      <div class="row">
+        
+        <div class="input-field col s6">
+          <input id="title" type="text" class="validate" name="title" [(ngModel)]="title" required>
+          <label for="title">title</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="Description" type="text" class="validate" name="description" [(ngModel)]="description" required>
+            <label for="Description">Description</label>
+          </div>
+      </div>
+     
+      <button class="waves-effect purple btn" type="submit" [disabled] = "f.invalid">{{editMode ? updating ? 'Updating...' : 'Update' : adding ? 'Saving..' : 'Save'}}</button>
+      <button class="waves-effect red btn" style="margin-left: 20px;" type="button" (click) = 'onDeleteTodo()' *ngIf="editMode">{{deleting ? 'Deleting...' : 'Delete'}}</button>
+      <a class="waves-effect red darken-4 btn" style="margin-left: 20px;">Clear</a>
+      
+      
+    </form>
+
+   
+  </div>

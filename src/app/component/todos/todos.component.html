@@ -1,0 +1,18 @@
+
+<div *ngIf="todos.length > 0 && !loading">
+    <h3 class="center">Todos</h3>
+    <ul class="collection" style="margin-top: 5%;">
+        <li class="collection-item" (click) = 'onTodo(todo)' style="cursor: pointer;" *ngFor="let todo of todos">
+            {{todo.title}}
+            <strong>{{todo.date  |  date: 'dd-MMM-yyyy'}}</strong>
+        </li>
+    </ul>
+
+    
+
+</div>
+
+<h3 class="center" *ngIf="loading">Loading..</h3>
+<h3 class="center" *ngIf="todos.length == 0 && !loading">No Todos</h3>
+
+ 
